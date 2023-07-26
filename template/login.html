@@ -52,22 +52,23 @@
 
 
 
-
+<h1 class="h3 mb-3 fw-normal" style="color:white; background:red;transform: skew(-14deg);">{{yo}}</h1>
     <main class="form-signin w-50 m-auto my-100 py-4">
+     
       <form method="POST" action="\login">
         {% csrf_token %}
-     
+        {% comment %} <h1 class="h3 mb-3 fw-normal" style="color:white; background:red;transform: skew(-14deg);">{{yo}}</h1> {% endcomment %}
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div class="form-floating">
           <input
-            type="text"
+            type="email"
             class="form-control"
             id="floatingInput"
             placeholder="name@example.com"
-            name="username"
+            name="email"
           />
-          <label for="floatingInput">UserName</label>
+          <label for="floatingInput">EMAIL</label>
         </div>
         <div class="form-floating">
           <input

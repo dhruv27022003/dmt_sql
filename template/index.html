@@ -66,21 +66,36 @@
         <div class="container">
     
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+
+
             <div class="col">
+                  
               <div class="card shadow-sm">
                 <img src="https://source.unsplash.com/random/500x500?TEA" class="d-block w-100 h-25" alt="...">
                 <div class="card-body">
-                  <p class="card-text">OOLONG TEA</p>  <h6 >Rs 50</h6> <div class="d-flex justify-content-between align-items-center">
-                   
+                
+                  <p class="card-text" id="search" name="search" type="text" class="query-search" placeholder="Search...">TEA</p> <h6 >Rs 30</h6>
+                
+                  <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                       <!-- <button type="submit" class="btn btn-sm btn-outline-secondary" action="/thanks" onclick="" >BUY NOW</button> -->
                        <a class="btn btn-sm btn-outline-secondary " style="text-decoration: none;" href="thanks">BUY NOW</a>
+                       <form method="POST" action="/cartin">
+                        {% csrf_token %}
+                       <input type="hidden"  name="tt" value="TEA"/>
+                       <input type="hidden"  name="pp" value="30"/>
+                       <button class="btn btn-sm btn-outline-secondary " type="submit"  >ADD to cart</button>
+                      </form>
                     </div>
                     <small class="text-muted">2 mins</small>
                   </div>
                 </div>
               </div>
+            
             </div>
+
+
+
             <div class="col">
               <div class="card shadow-sm">
                 <img src="https://source.unsplash.com/random/500x500?greentea" class="d-block w-100 h-25" alt="...">
@@ -89,6 +104,12 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <a class="btn btn-sm btn-outline-secondary " style="text-decoration: none;" href="thanks">BUY NOW</a>
+                      <form method="POST" action="/cartin">
+                        {% csrf_token %}
+                       <input type="hidden"  name="tt" value="GREEN TEA"/>
+                       <input type="hidden"  name="pp" value="90"/>
+                       <button class="btn btn-sm btn-outline-secondary " type="submit"  >ADD to cart</button>
+                      </form>
                       <!-- <button type="button" class="btn btn-sm btn-outline-secondary">BUY NOW</button> -->
                    </div>
                     <small class="text-muted">9 mins</small>
@@ -96,6 +117,9 @@
                 </div>
               </div>
             </div>
+
+
+
             <div class="col">
               <div class="card shadow-sm">
                 {% comment %} <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
@@ -106,6 +130,12 @@
                    
                     <div class="btn-group">
                       <a class="btn btn-sm btn-outline-secondary " style="text-decoration: none;" href="thanks">BUY NOW</a>
+                      <form method="POST" action="/cartin">
+                        {% csrf_token %}
+                       <input type="hidden"  name="tt" value="BLACK TEA"/>
+                       <input type="hidden"  name="pp" value="80"/>
+                       <button class="btn btn-sm btn-outline-secondary " type="submit"  >ADD to cart</button>
+                      </form>
                       <!-- <button type="button" class="btn btn-sm btn-outline-secondary">BUY NOW</button> -->
                     </div>
                     <small class="text-muted">5 mins</small>
@@ -284,4 +314,7 @@
       © DHRUV DADHEECH
       
         </div>
+
+
+       
 {% endblock body %}

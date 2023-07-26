@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+    your cart
+    <div>
+        <div class="album py-5 bg-light">
+            <div class="container">
+        
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+
+       {% for n in yo%}
+       <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://source.unsplash.com/random/500x500?{{n.0}}" class="d-block w-100 h-25" alt="...">
+          <div class="card-body">
+            {% comment %} {% for nn in n %}             {% endcomment %}
+            <p class="card-text" id="search" name="search" type="text" class="query-search" placeholder="Search...">
+
+              {{n.0}}</p>
+              <p class="card-text" id="search" name="search" type="text" class="query-search" placeholder="Search...">
+
+                ₹{{n.1}}</p>
+              {% comment %} {% endfor %} {% endcomment %}
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a class="btn btn-sm btn-outline-secondary " style="text-decoration: none;" href="thanks">BUY NOW</a>
+                <form method="POST" action="/remove">
+                  {% csrf_token %}
+                 <input type="hidden"  name="tt" value="{{n.0}}"/>
+                 <input type="hidden"  name="pp" value="{{n.1}}"/>
+                 <button class="btn btn-sm btn-outline-secondary " type="submit"  >REMOVE</button>
+                </form>
+                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">BUY NOW</button> -->
+             </div>
+              <small class="text-muted">9 mins</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+     {% endfor %} 
+  
+     <div class="col">
+      <div class="card shadow-sm" style="    height: 75vh; padding:auto; font-size: 40vh; padding-left:2vw; border: black;
+      border-width: 10px;
+      border-style: solid;
+      border-radius: 100px; ">
+        <a href="/display"  style=" text-decoration:none; color:black" >
+        <div class="card-body">
+          {% comment %} {% for nn in n %}             {% endcomment %}
+          
+            {% comment %} {% endfor %} {% endcomment %}
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+✚
+              <!-- <button type="button" class="btn btn-sm btn-outline-secondary">BUY NOW</button> -->
+           </div>
+          
+          </div>
+        </div>
+      
+      </div>
+    </a>
+    </div>
+
+    </div>
+
+
+    </div>
+</div>
+
+</div>
+
+</div>
+
+     ADD PRODUCTS
+</body>
+</html>

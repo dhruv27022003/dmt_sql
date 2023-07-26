@@ -56,10 +56,13 @@
           <form class="d-flex" role="search">
            
             <h3 style="background-color: rgb(250, 250, 250); margin-right: 5vh; margin-top: 5px;
-                    border-radius: 3px; padding: 2px;  
-            ">
-              
-              {{request.user.username}}</h3>
+                    padding: 2px;    transform:skew(-14deg); color:black;"
+
+                   
+            >
+            <a href="profile" style="text-decoration: none; color:black;" onMouseOver="this.style.color='white', this.style.backgroundColor = 'black'"  onMouseOut="this.style.color='black', this.style.backgroundColor = 'white'">
+            
+              {{yo}}{{y1}} ::  </a>  </h3>
             <button class="btn btn-outline-success"  type="submit">
               <a href="/logout" style="text-decoration: none; color: aliceblue;">
               LOGOUT</a>
@@ -99,6 +102,11 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
-    ></script>
+    >
+  
+  
+  
+  
+  </script>
   </body>
 </html>
